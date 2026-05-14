@@ -1,3 +1,27 @@
+**Для обычных пользователей (русский)**  
+
+У меня возникала ошибка импорта всех GIF‑файлов в программе **AJAZZ AK820Pro**. Хотя GIF‑файлы можно самостоятельно изменить до размера 128 × 128 px и разделить на кадры с помощью бесплатных онлайн‑сервисов, я создал утилиту, которая делает это одной кнопкой.  
+
+1. Скачайте `GifSplitter.exe` из папки **dist**: https://github.com/RiyaGrady/Ajazz-ak820pro-gif-splitter/tree/main/dist  
+2. Запустите файл и укажите путь к вашему GIF‑файлу.  
+3. Программа автоматически изменит размер изображения до 128 × 128 px и разобьёт его на отдельные кадры.  
+
+После этого в **AJAZZ AK820Pro** можно создать новый проект и указать папку, содержащую все полученные кадры.  
+
+
+
+**For regular users (English)**  
+
+I kept getting an import error for all GIF files in the **AJAZZ AK820Pro** software. While you can resize GIFs to 128 × 128 px and split them into frames using free online services, I built a tool that does it with a single click.  
+
+1. Download `GifSplitter.exe` from the **dist** folder: https://github.com/RiyaGrady/Ajazz-ak820pro-gif-splitter/tree/main/dist  
+2. Run the executable and specify the path to your GIF file.  
+3. The program will automatically resize the image to 128 × 128 px and split it into individual frames.  
+
+You can then create a new project in **AJAZZ AK820Pro** and point it to the folder containing all the generated frames.
+
+----------------------------
+
 # Ajazz-ak820pro-gif-splitter
 GifSplitter – принимает анимированный GIF, уменьшает каждый кадр до 128 × 128 px, сохраняет кадры в отдельную папку и озвучивает результат (успех/ошибка). Поддерживает как графический интерфейс (Tkinter), так и запуск из консоли с указанием пути. Затем папка, содержащая извлеченные кадры, автоматически открывается в проводнике.
 
