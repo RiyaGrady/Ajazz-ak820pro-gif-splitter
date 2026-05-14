@@ -1,5 +1,6 @@
 # Ajazz-ak820pro-gif-splitter
 GifSplitter – принимает анимированный GIF, уменьшает каждый кадр до 128 × 128 px, сохраняет кадры в отдельную папку и озвучивает результат (успех/ошибка). Поддерживает как графический интерфейс (Tkinter), так и запуск из консоли с указанием пути.
+<img width="358" height="201" alt="image" src="https://github.com/user-attachments/assets/fa8a0878-e6d9-4016-a998-f662b1ae56e4" />
 
 ---  
 
