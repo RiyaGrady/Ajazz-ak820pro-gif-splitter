@@ -1,6 +1,13 @@
 # Ajazz-ak820pro-gif-splitter
-GifSplitter – принимает анимированный GIF, уменьшает каждый кадр до 128 × 128 px, сохраняет кадры в отдельную папку и озвучивает результат (успех/ошибка). Поддерживает как графический интерфейс (Tkinter), так и запуск из консоли с указанием пути.
-<img width="358" height="201" alt="image" src="https://github.com/user-attachments/assets/fa8a0878-e6d9-4016-a998-f662b1ae56e4" />
+GifSplitter – принимает анимированный GIF, уменьшает каждый кадр до 128 × 128 px, сохраняет кадры в отдельную папку и озвучивает результат (успех/ошибка). Поддерживает как графический интерфейс (Tkinter), так и запуск из консоли с указанием пути. Затем папка, содержащая извлеченные кадры, автоматически открывается в проводнике.
+
+1. <img width="358" height="201" alt="image" src="https://github.com/user-attachments/assets/fa8a0878-e6d9-4016-a998-f662b1ae56e4" />
+
+2. <img width="1308" height="435" alt="image" src="https://github.com/user-attachments/assets/a37fd6f6-2100-4751-b799-c84937ba9c35" />
+
+3. <img width="1537" height="860" alt="image" src="https://github.com/user-attachments/assets/68471e74-003e-44a5-ae39-2c1ebcd1d815" />
+
+4. <img width="2280" height="1246" alt="image" src="https://github.com/user-attachments/assets/c17e9d36-c9df-4415-8a88-83f05037de9d" />
 
 ---  
 
@@ -63,7 +70,7 @@ python build_exe.py
 1. Двойной клик по `GifSplitter.exe`.  
 2. Нажмите **«Указать путь для вашего GIF‑файла»**.  
 3. Выберите нужный GIF‑файл.  
-4. После успешного разреза появится диалоговое окно с путём к папке‑результату и прозвучит короткая мелодия **anime‑wow.wav**.  
+4. После успешного разреза появится диалоговое окно с путём к папке‑результату и прозвучит короткая мелодия **anime‑wow.wav**, и папка с извлеченными кадрами откроется автоматически.  
 
 ### CLI (для автоматизации)
 
@@ -71,7 +78,7 @@ python build_exe.py
 GifSplitter.exe "D:\MyGifs\animation.gif"
 ```
 *Если указан каталог, будет обработан первый найденный файл `*.gif` в этой папке.*  
-При ошибке (не GIF, повреждённый файл и т.п.) будет воспроизведён звук **split‑sad‑meow‑song.wav** и выведено сообщение в консоль.
+При ошибке (не GIF, повреждённый файл и т.п.) будет воспроизведён звук **split‑sad‑meow‑song.wav** и выведено сообщение в консоль, и ни одна папка не открывается.
 
 ## Требования
 * Python 3.9+ для сборки (пользователю достаточно только готовый `exe`).
@@ -82,7 +89,7 @@ ENGLISH
 ```markdown
 # GifSplitter
 
-**GifSplitter** – a simple Windows utility that splits an animated GIF file into individual frames, resizes each frame to **128 × 128 px**, and saves them in a sub‑folder next to the original. Upon completion a sound is played (success – `anime-wow.wav`, error – `split-sad-meow-song.wav`).  
+**GifSplitter** – a simple Windows utility that splits an animated GIF file into individual frames, resizes each frame to **128 × 128 px**, and saves them in a sub‑folder next to the original. Upon completion a sound is played (success – `anime-wow.wav`, error – `split-sad-meow-song.wav`). The folder containing the extracted frames is then **automatically opened** in Explorer.  
 
 The program works in two modes:
 
@@ -141,7 +148,7 @@ When finished, the `dist/` folder will contain `GifSplitter.exe` (icon **gif_ico
 1. Double‑click `GifSplitter.exe`.  
 2. Press **«Указать путь для вашего GIF‑файла»**.  
 3. Select the desired GIF file.  
-4. After a successful split a dialog shows the path to the result folder and the short melody **anime-wow.wav** is played.
+4. After a successful split a dialog shows the path to the result folder and the short melody **anime-wow.wav** is played, and the folder with the extracted frames is opened automatically.
 
 ### CLI (for automation)
 
@@ -150,7 +157,7 @@ GifSplitter.exe "D:\MyGifs\animation.gif"
 ```
 
 *If a directory is supplied, the first `*.gif` file found in that folder will be processed.*  
-On failure (non‑GIF, corrupted file, etc.) the sound **split-sad-meow-song.wav** is played and an error message is printed to the console.
+On failure (non‑GIF, corrupted file, etc.) the sound **split-sad-meow-song.wav** is played and an error message is printed to the console, and no folder is opened.
 
 ## Requirements
 
