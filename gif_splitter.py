@@ -74,6 +74,20 @@ def split_gif(gif_path: Path, out_dir: Path, size: tuple[int, int] = (128, 128))
 
     # звук успеха
     _play(SUCCESS_SOUND)
+
+    # --------------------------------------------------------------
+    # 2️⃣ ОТКРЫТЬ ПАПКУ С РЕЗУЛЬТАТОМ (если ОС позволяет)
+    # --------------------------------------------------------------
+    try:
+        # На Windows `os.startfile` открывает папку в Проводнике.
+        # На macOS/Linux можно использовать `subprocess.run([...])`,
+        # но в данном проекте ориентируемся на Windows.
+        import os
+        os.startfile(str(out_dir))
+    except Exception as exc:          # если открытие не удалось – просто игнорируем
+        # (можно добавить отладочный вывод, но приложение не падает)
+        print(f"⚠️ Не удалось открыть папку автоматически: {exc}")
+
     return out_dir
 
 
@@ -101,7 +115,7 @@ def run_cli(cli_path: Path | None = None):
 
         out_dir = gif_path.parent / (gif_path.stem + "_frames")
         split_gif(gif_path, out_dir)
-        print(f"✅ Кадры сохранены в «{out_dir}»")
+        print(f"✅ Кадры сохранены в «{out_dir}». Папка открыта в Проводнике (если это возможно).")
     except Exception as exc:
         _play(FAIL_SOUND)
         sys.exit(f"❌ Ошибка: {exc}")
@@ -154,7 +168,7 @@ class GifSplitterGUI:
             split_gif(gif_path, out_dir)
             messagebox.showinfo(
                 "Готово",
-                f"Кадры успешно сохранены в папке:\n{out_dir}",
+                f"Кадры успешно сохранены в папке:\n{out_dir}\n\nПапка была открыта автоматически.",
             )
         except Exception as exc:
             _play(FAIL_SOUND)
