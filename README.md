@@ -107,6 +107,9 @@ GifSplitter.exe "D:\MyGifs\animation.gif"
 ## Требования
 * Python 3.9+ для сборки (пользователю достаточно только готовый `exe`).
 
+## Логирование:
+<img width="299" height="158" alt="image" src="https://github.com/user-attachments/assets/114d9b9b-85bc-458f-869b-8b04119fbe48" /> <img width="756" height="222" alt="image" src="https://github.com/user-attachments/assets/c510fe84-1b7c-4244-9222-ac1e188020ef" />
+
 ENGLISH
 ---------------
 
@@ -185,4 +188,8 @@ On failure (non‑GIF, corrupted file, etc.) the sound **split-sad-meow-song.wav
 
 ## Requirements
 
-* Python 3.9+ for building (end users only need the compiled `exe`).  
+* Python 3.9+ for building (end users only need the compiled `exe`).
+
+## Logging:
+
+<img width="299" height="158" alt="image" src="https://github.com/user-attachments/assets/114d9b9b-85bc-458f-869b-8b04119fbe48" /> <img width="756" height="222" alt="image" src="https://github.com/user-attachments/assets/c510fe84-1b7c-4244-9222-ac1e188020ef" />
