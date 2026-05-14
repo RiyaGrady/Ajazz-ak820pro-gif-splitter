@@ -1,2 +1,156 @@
 # Ajazz-ak820pro-gif-splitter
-GifSplitter – небольшая утилита для Windows, written in Python. Она принимает анимированный GIF, уменьшает каждый кадр до 128 × 128 px, сохраняет кадры в отдельную папку и озвучивает результат (успех/ошибка). Поддерживает как графический интерфейс (Tkinter), так и запуск из консоли с указанием пути.
+GifSplitter – принимает анимированный GIF, уменьшает каждый кадр до 128 × 128 px, сохраняет кадры в отдельную папку и озвучивает результат (успех/ошибка). Поддерживает как графический интерфейс (Tkinter), так и запуск из консоли с указанием пути.
+
+---  
+
+## `README.md` для GitHub  
+
+```markdown
+# GifSplitter
+
+**GifSplitter** – простая Windows‑утилита, которая разбивает анимированный GIF‑файл на отдельные кадры, уменьшает каждый кадр до **128 × 128 px** и сохраняет их в подпапку рядом с оригиналом. После завершения воспроизводятся звуковые сигналы (успех – `anime-wow.wav`, ошибка – `split-sad-meow-song.wav`).  
+
+Программа имеет два режима работы:
+
+* **GUI** – нажмите кнопку *«Указать путь для вашего GIF‑файла»* и выберите файл. После обработки появится диалоговое окно с путём к папке‑результату и звуковой сигнал.
+* **CLI** – удобен для скриптов и автоматизации:  
+  ```bash
+  GifSplitter.exe "C:\path\to\my.gif"
+  ```
+
+## Содержание репозитория
+
+```
+gif_splitter/
+│
+├─ gif_splitter.py          # основной скрипт (логика + CLI + GUI)
+├─ requirements.txt        # зависимости
+├─ build_exe.py            # сборка .exe через PyInstaller
+├─ icons/
+│   └─ gif_icon_riya.ico   # иконка exe‑файла
+└─ sounds/
+    ├─ anime-wow.wav       # короткая мелодия – успех
+    └─ split-sad-meow-song.wav  # звук ошибки
+```
+
+## Установка и сборка
+
+### 1. Клонирование репозитория, Создание виртуального окружения (рекомендовано), Установка зависимостей  
+```bash
+git clone https://github.com/yourname/gif_splitter.git
+cd gif_splitter
+```
+```
+python -m venv venv
+.\venv\Scripts\activate   # Windows
+# source venv/bin/activate  # macOS/Linux (не нужен для сборки exe)
+```
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Сборка самодостаточного `.exe`  
+```bash
+python build_exe.py
+```
+После завершения в папке `dist/` появится `GifSplitter.exe` (иконка **gif_icon_riya.ico**).
+
+## Как пользоваться
+
+### GUI (рекомендовано для обычных пользователей)
+
+1. Двойной клик по `GifSplitter.exe`.  
+2. Нажмите **«Указать путь для вашего GIF‑файла»**.  
+3. Выберите нужный GIF‑файл.  
+4. После успешного разреза появится диалоговое окно с путём к папке‑результату и прозвучит короткая мелодия **anime‑wow.wav**.  
+
+### CLI (для автоматизации)
+
+```bash
+GifSplitter.exe "D:\MyGifs\animation.gif"
+```
+*Если указан каталог, будет обработан первый найденный файл `*.gif` в этой папке.*  
+При ошибке (не GIF, повреждённый файл и т.п.) будет воспроизведён звук **split‑sad‑meow‑song.wav** и выведено сообщение в консоль.
+
+## Требования
+* Python 3.9+ для сборки (пользователю достаточно только готовый `exe`).
+
+ENGLISH
+---------------
+
+```markdown
+# GifSplitter
+
+**GifSplitter** – a simple Windows utility that splits an animated GIF file into individual frames, resizes each frame to **128 × 128 px**, and saves them in a sub‑folder next to the original. Upon completion a sound is played (success – `anime-wow.wav`, error – `split-sad-meow-song.wav`).  
+
+The program works in two modes:
+
+* **GUI** – click the **«Указать путь для вашего GIF‑файла»** button, choose a file, and after processing a dialog appears with the path to the output folder together with a success sound.  
+* **CLI** – convenient for scripts and automation:  
+  ```bash
+  GifSplitter.exe "C:\path\to\my.gif"
+  ```
+
+## Repository contents
+
+```
+gif_splitter/
+│
+├─ gif_splitter.py          # main script (logic + CLI + GUI)
+├─ requirements.txt        # dependencies
+├─ build_exe.py            # builds the .exe with PyInstaller
+├─ icons/
+│   └─ gif_icon_riya.ico   # exe icon
+└─ sounds/
+    ├─ anime-wow.wav       # short melody – success
+    └─ split-sad-meow-song.wav  # error sound
+```
+
+## Installation & Build
+
+### 1. Clone the repository, create a virtual environment (recommended), install dependencies  
+
+```bash
+git clone https://github.com/yourname/gif_splitter.git
+cd gif_splitter
+```
+
+```bash
+python -m venv venv
+.\venv\Scripts\activate   # Windows
+# source venv/bin/activate  # macOS/Linux (not needed for exe build)
+```
+
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Build a standalone `.exe`  
+
+```bash
+python build_exe.py
+```
+
+When finished, the `dist/` folder will contain `GifSplitter.exe` (icon **gif_icon_riya.ico**).
+
+## How to use
+
+### GUI (recommended for regular users)
+
+1. Double‑click `GifSplitter.exe`.  
+2. Press **«Указать путь для вашего GIF‑файла»**.  
+3. Select the desired GIF file.  
+4. After a successful split a dialog shows the path to the result folder and the short melody **anime-wow.wav** is played.
+
+### CLI (for automation)
+
+```bash
+GifSplitter.exe "D:\MyGifs\animation.gif"
+```
+
+*If a directory is supplied, the first `*.gif` file found in that folder will be processed.*  
+On failure (non‑GIF, corrupted file, etc.) the sound **split-sad-meow-song.wav** is played and an error message is printed to the console.
+
+## Requirements
+
+* Python 3.9+ for building (end users only need the compiled `exe`).  
